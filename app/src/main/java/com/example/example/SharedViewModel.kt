@@ -7,6 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
 class SharedViewModel @ViewModelInject constructor(
+    // not useful for now
     @Assisted private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
