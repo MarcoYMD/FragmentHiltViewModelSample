@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5A623"
-    tools:context=".Sender">
+    android:background="@drawable/fragment_sender_background"
+    tools:context=".presentation.fragment.Sender">
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/msg_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Send Your Message" />
+        style="@style/Widget.MaterialComponents.Button"
+        android:text="@string/show_qod" />
 </RelativeLayout>

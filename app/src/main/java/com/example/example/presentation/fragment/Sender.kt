@@ -1,30 +1,32 @@
-package com.example.example
+package com.example.example.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
+import androidx.fragment.app.viewModels
+import com.example.example.R
+import com.example.example.presentation.viewmodel.SharedViewModel
+import com.google.android.material.button.MaterialButton
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.scopes.FragmentScoped
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+//private const val ARG_PARAM1 = "param1"
+//private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Receiver.newInstance] factory method to
+ * Use the [Sender.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Receiver : Fragment() {
+class Sender : Fragment() {
 
     private val model: SharedViewModel by activityViewModels()
-    //    // TODO: Rename and change types of parameters
-//    private var param1: String? = null
-//    private var param2: String? = null
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 ////        arguments?.let {
@@ -38,15 +40,14 @@ class Receiver : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_receiver, container, false)
-        val msgTextView = view.findViewById<View>(R.id.receiver_tv) as TextView
+        val view = inflater.inflate(R.layout.fragment_sender, container, false)
 
-        model.message.observe(viewLifecycleOwner,
-            Observer<Any> {
-                    o -> msgTextView.text = o?.toString() })
+        val button = view.findViewById(R.id.msg_btn) as MaterialButton
+        // on click button
+        button.setOnClickListener { model.updateMessageFromApi() }
         return view
     }
-
+//
 //    companion object {
 //        /**
 //         * Use this factory method to create a new instance of
@@ -54,12 +55,12 @@ class Receiver : Fragment() {
 //         *
 //         * @param param1 Parameter 1.
 //         * @param param2 Parameter 2.
-//         * @return A new instance of fragment Receiver.
+//         * @return A new instance of fragment Sender.
 //         */
 //        // TODO: Rename and change types and number of parameters
 //        @JvmStatic
 //        fun newInstance(param1: String, param2: String) =
-//            Receiver().apply {
+//            Sender().apply {
 //                arguments = Bundle().apply {
 //                    putString(ARG_PARAM1, param1)
 //                    putString(ARG_PARAM2, param2)

@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#11209F"
-    tools:context=".Receiver">
+    android:background="@drawable/fragment_receiver_background"
+    tools:context=".presentation.fragment.Receiver">
 
+    <ImageView
+        android:id="@+id/receiver_iv"
+        android:layout_gravity="top"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/receiver_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_gravity="bottom"
         android:gravity="center"
-        android:text="I am a Messenger"
+        android:padding="8dp"
+        android:text="@string/placeholder_textview"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
-</RelativeLayout>
+</FrameLayout>

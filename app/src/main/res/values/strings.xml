@@ -2,4 +2,6 @@
     <string name="app_name">Example</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="placeholder_textview" />
+    <string name="show_qod">Quote of the day</string>
 </resources>
